@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="./Login_Action.jsp" method="post">
-	<input type="text" name="input_id">
-	<input type="password" name="input_pw">
-	<input type="submit" name="·Î±×ÀÎ">
-</form>
+	<%
+	session.removeAttribute("input_id");
+	response.sendRedirect("./index.jsp");
+	%>
 </body>
 </html>
