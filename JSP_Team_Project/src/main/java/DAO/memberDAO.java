@@ -51,7 +51,7 @@ public class memberDAO {
 		
 	}
 
-	public void memberInsert(String input_name, String input_id, String input_pw, String input_address) {
+	public int memberInsert(String input_name, String input_id, String input_pw, String input_address) {//회원가입
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQl="INSERT jsp_member(member_name, member_id, member_pw, member_address) values(?,?,?,?)";
@@ -61,10 +61,10 @@ public class memberDAO {
 			pstmt.setString(2, input_id);
 			pstmt.setString(3, input_pw);
 			pstmt.setString(4, input_address);
-			pstmt.executeUpdate();
+			return pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
-		}
+		}return -1;
 	}
 	
 	public boolean checkDuplicateID(String input_id) {//아이디 중복체크
