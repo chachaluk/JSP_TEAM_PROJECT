@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ page import="DAO.memberDAO" %>
-<%@page import="java.sql.PreparedStatement"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,9 +15,6 @@ String input_pw=request.getParameter("input_pw");
 String input_address=request.getParameter("input_address");
 String password_confirm=request.getParameter("password_confirm");
 
-PreparedStatement pstmt = null;
-int result = pstmt.executeUpdate();
-
 boolean id_check=false;
 boolean password_check=false;
 memberDAO DAO=new memberDAO();
@@ -29,12 +25,11 @@ if(id_check==false){
 	if(input_pw.equals(password_confirm)==false){
 		System.out.println("비밀번호가 일치하지 않습니다.");
 	}
-	else if(result==1) {
+	else {
 		DAO.memberInsert(input_name, input_id, input_pw, input_address);
 		System.out.println("회원가입 완료!");
 	}
 }
-
 
 %>
 </body>

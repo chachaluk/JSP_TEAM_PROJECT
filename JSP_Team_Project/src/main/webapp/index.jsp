@@ -12,7 +12,7 @@
 		<ul>
 		<li><a href="/">홈</a></li>
 		<%
-		Object input_id = session.getAttribute("input_id");
+		Object input_id = session.getAttribute("input_Id");
 		%>
 		<%
 		if(input_id==null){
@@ -22,8 +22,7 @@
 		<%
 		} else {
 		%>
-		<li><a href="./LogoutAction.jsp">로그아웃</a></li>
-		<li><a href="./update.jsp">개인정보수정</a></li>
+		<li><a href="">개인정보수정</a></li>
 		<%
 		}
 		%>
