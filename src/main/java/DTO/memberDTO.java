@@ -16,7 +16,7 @@ public class memberDTO {
 		
 	}
 	
-	public memberDTO(String member_name, String member_id, String member_pw, String member_aderess, 
+	public memberDTO(String member_name, String member_id, String member_pw, String member_address, 
 		String name, String detail, int price) {
 		
 		
