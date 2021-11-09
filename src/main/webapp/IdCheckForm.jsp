@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java"
+    pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
 <div style="text-align: center"> 
-<h3>* ¾ÆÀÌµğ Áßº¹È®ÀÎ *</h3> 
+<h3>* ì•„ì´ë”” ì¤‘ë³µí™•ì¸ *</h3> 
 <form method="post" action="IdCheckAction.jsp"> 
-<label for="input_id">¾ÆÀÌµğ</label>
+<label for="input_id">ì•„ì´ë””</label>
 <input type="text" name="input_id" maxlength="10" autofocus> 
-<input type="submit" value="Áßº¹È®ÀÎ"> 
+<input type="submit" value="ì¤‘ë³µí™•ì¸"> 
 </form> 
 </div>
 

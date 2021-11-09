@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import DTO.memberDTO;
 
 public class memberDAO {
-	private String url="jdbc:mysql://127.0.0.1:3306/jsp_project?serverTimezone=UTC&useSSL=false";
+	private String url="jdbc:mysql://127.0.0.1:3306/jsp_project?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf8";
 	private String dbID="root";
 	private String dbPW="1234";
 	
@@ -28,7 +28,7 @@ public class memberDAO {
 		}
 	}
 	
-	public boolean memberSelect(String input_id, String input_pw) {//·Î±×ÀÎ
+	public boolean memberSelect(String input_id, String input_pw) {//ï¿½Î±ï¿½ï¿½ï¿½
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQL="SELECT member_pw FROM jsp_member where member_id=?";
@@ -51,23 +51,23 @@ public class memberDAO {
 		
 	}
 
-	public int memberInsert(String input_name, String input_id, String input_pw, String input_address) {//È¸¿ø°¡ÀÔ
+	public void memberInsert(String input_name, String input_id, String input_pw, String input_address) {//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String SQl="INSERT jsp_member(member_name, member_id, member_pw, member_address) values(?,?,?,?)";
+		String SQL="INSERT into jsp_member(member_name, member_id, member_pw, member_address) values(?,?,?,?)";
 		try {
-			pstmt=con.prepareStatement(SQl);
+			pstmt=con.prepareStatement(SQL);
 			pstmt.setString(1, input_name);
 			pstmt.setString(2, input_id);
 			pstmt.setString(3, input_pw);
 			pstmt.setString(4, input_address);
-			return pstmt.executeUpdate();
+			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
-		}return -1;
+		}
 	}
 	
-	public boolean checkDuplicateID(String input_id) {//¾ÆÀÌµð Áßº¹Ã¼Å©
+	public boolean checkDuplicateID(String input_id) {//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½Ã¼Å©
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQL="SELECT*FROM jsp_member where member_id=?";
@@ -80,7 +80,7 @@ public class memberDAO {
 			while(rs.next()) {
 				String member_id = rs.getString("member_id");
 				if(member_id.equals(input_id)==true) {
-				System.out.printf("%s: ¾ÆÀÌµð Á¸Àç!\n", input_id);
+				System.out.printf("%s: ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½!\n", input_id);
 				return false;
 				}
 			
