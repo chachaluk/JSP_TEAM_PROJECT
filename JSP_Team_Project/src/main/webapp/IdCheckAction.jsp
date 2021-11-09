@@ -20,7 +20,7 @@ int cnt=0;
 out.println("입력 ID : <strong>" + input_id + "</strong>"); 
 if(id_check==true){ 
 	out.println("<p>사용 가능한 아이디입니다.</p>"); 
-	out.println("<a href=\"javascript:apply(\'"+input_id+"\')\">[적용]</a>");
+	out.println("<a href='javascript:apply(\"" + input_id + "\")'>[적용]</a>");
 %>
 <script> 
 function apply(input_id){ 
