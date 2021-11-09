@@ -1,11 +1,11 @@
 <%@ page language="java"
-    pageEncoding="EUC-KR" contentType="text/html; charset=EUC-KR" %>
+    pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ page import="DAO.memberDAO" %>
 <%@page import="java.sql.PreparedStatement"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -22,14 +22,14 @@ boolean password_check=false;
 memberDAO DAO=new memberDAO();
 id_check=DAO.checkDuplicateID(input_id);
 if(id_check==false){
-	System.out.println("Áßº¹ ¾ÆÀÌµğ°¡ Á¸ÀçÇÕ´Ï´Ù.");
+	System.out.println("ì¤‘ë³µ ì•„ì´ë””ê°€ ì¡´ì¬í•©ë‹ˆë‹¤.");
 } else {
 	if(input_pw.equals(password_confirm)==false){
-		System.out.println("ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+		System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 	}
 	else {
 		DAO.memberInsert(input_name, input_id, input_pw, input_address);
-		System.out.println("È¸¿ø°¡ÀÔ ¿Ï·á!");
+		System.out.println("íšŒì›ê°€ì… ì™„ë£Œ!");
 		response.sendRedirect("./index.jsp");
 	}
 }

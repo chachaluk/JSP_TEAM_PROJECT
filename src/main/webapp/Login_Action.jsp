@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java"
+    pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ page import="DAO.memberDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -16,11 +16,11 @@ String input_pw = request.getParameter("input_pw");
 	boolean result=DAO.memberSelect(input_id, input_pw);
 	
 	if(result==true){
-		System.out.println("·Î±×ÀÎ ¼º°ø!: ¼¼¼Ç¿¡ °ª ÀúÀå!");
+		System.out.println("ë¡œê·¸ì¸ ì„±ê³µ!: ì„¸ì…˜ì— ê°’ ì €ì¥!");
 		session.setAttribute("input_id", input_id);
 		response.sendRedirect("./index.jsp");
 	}else{
-		System.out.println("·Î±×ÀÎ ½ÇÆĞ!");
+		System.out.println("ë¡œê·¸ì¸ ì‹¤íŒ¨!");
 		response.sendRedirect("./index.jsp");
 	}
 %>

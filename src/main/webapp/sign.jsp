@@ -1,10 +1,10 @@
 <%@ page language="java"
-    pageEncoding="EUC-KR" contentType="text/html; charset=EUC-KR" %>
+    pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="./css/sign.css" rel="stylesheet" type="text/css">
 <script>
@@ -17,37 +17,37 @@ function IdCheck(){
 function checkform() {
 	var form = document.regForm;
 	if(form.input_id.value=="") {
-		alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		form.input_id.focus();
 		return false;
 	} else if (form.password.value == "") {
-		alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		form.password.focus();
 		return false;
 	} else if (form.password.value != form.password_confirm.value) {
-		alert("ºñ¹Ğ¹øÈ£ ºÒÀÏÄ¡");
+		alert("ë¹„ë°€ë²ˆí˜¸ ë¶ˆì¼ì¹˜");
 		return false;
 	}
 	form.submit();
-	alert("¿Ï·á!");
+	alert("ì™„ë£Œ!");
 }
 </script>
 </head>
 <body>
 	<form name="regForm" action="./SignAction.jsp" method="post" >
-		<label for="input_name">ÀÌ¸§:</label>
-		<input type="text" name="input_name" id="input_name" placeholder="ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä"> <br>
-		<label for="input_id">¾ÆÀÌµğ:</label>
-		<input type="text" name="input_id" id="input_id" placeholder="¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä"> <br>
-		<input type="button" onclick="IdCheck()" value="¾ÆÀÌµğ Áßº¹Ã¼Å©"> <br>
-		<label for="input_pw">ºñ¹Ğ¹øÈ£:</label>
-		<input type="password" name="input_pw" placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä"> <br>
-		<label for="password_confirm">ºñ¹Ğ¹øÈ£ È®ÀÎ:</label>
-		<input type="password" name="password_confirm" placeholder="ºñ¹Ğ¹øÈ£È®ÀÎ"> <br>
-		<label for="input_address">ÁÖ¼Ò:</label>
-		<input type="text" name="input_address" id="input_address" placeholder="ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä"> <br>
+		<label for="input_name">ì´ë¦„:</label>
+		<input type="text" name="input_name" id="input_name" placeholder="ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”"> <br>
+		<label for="input_id">ì•„ì´ë””:</label>
+		<input type="text" name="input_id" id="input_id" placeholder="ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”"> <br>
+		<input type="button" onclick="IdCheck()" value="ì•„ì´ë”” ì¤‘ë³µì²´í¬"> <br>
+		<label for="input_pw">ë¹„ë°€ë²ˆí˜¸:</label>
+		<input type="password" name="input_pw" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”"> <br>
+		<label for="password_confirm">ë¹„ë°€ë²ˆí˜¸ í™•ì¸:</label>
+		<input type="password" name="password_confirm" placeholder="ë¹„ë°€ë²ˆí˜¸í™•ì¸"> <br>
+		<label for="input_address">ì£¼ì†Œ:</label>
+		<input type="text" name="input_address" id="input_address" placeholder="ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”"> <br>
 		
-		<input type="submit" value="È¸¿ø°¡ÀÔ" id="signBtn" onclick="checkform()">
+		<input type="submit" value="íšŒì›ê°€ì…" id="signBtn" onclick="checkform()">
 	</form>
 </body>
 </html>
