@@ -7,6 +7,31 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="./css/sign.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-Latest.min.js"><</script>
+<script src="http://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"><</script>
+
+<script>
+$(window).on("load",function(){
+	$("#find_button").click(function(){
+		alert("find!");
+		
+		new daum.Postcode({
+			
+			oncomplete:function(data) {
+				
+				jQuery("#zonecode").val(data.zonecode);
+				jQuery("#address").val(data.address);
+				
+				jQuery("#detail").focus();
+				
+				$("#zonecode").css({background:"gray"});
+				$("#address").css({background:"gray"});
+			}
+		}).open();
+	});
+})
+</script>
+
 <script>
 function IdCheck(){
 	alert("IdCheck!");
@@ -15,6 +40,7 @@ function IdCheck(){
 }
 
 function checkform() {
+	alert("완료!");
 	var form = document.regForm;
 	if(form.input_id.value=="") {
 		alert("아이디를 입력해주세요");
@@ -29,7 +55,6 @@ function checkform() {
 		return false;
 	}
 	form.submit();
-	alert("완료!");
 }
 </script>
 </head>
@@ -44,8 +69,13 @@ function checkform() {
 		<input type="password" name="input_pw" placeholder="비밀번호를 입력하세요"> <br>
 		<label for="password_confirm">비밀번호 확인:</label>
 		<input type="password" name="password_confirm" placeholder="비밀번호확인"> <br>
-		<label for="input_address">주소:</label>
-		<input type="text" name="input_address" id="input_address" placeholder="주소를 입력하세요"> <br>
+		<label for="input_address">주소</label>
+		<input type="button" id="find_button" value="주소 검색"> <br>
+		
+		<input type="text" name="zonecode" id="zonecode" placeholder="우편번호" readonly> <br>
+		<input type="text" name="address" id="address" placeholder="도로명주소" readonly> <br>
+		<input type="text" name="detail" id="detail" placeholder="상세주소"> <br>
+		
 		
 		<input type="submit" value="회원가입" id="signBtn" onclick="checkform()">
 	</form>
