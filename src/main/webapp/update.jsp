@@ -1,16 +1,16 @@
-<%@ page language="java"
-    pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
 <form action="./update_Action.jsp" method="post">
 	<input type="text" name="input_id">
 	<input type="password" name="input_pw">
-	<input type="submit" name="ë¡œê·¸ì¸ì •ë³´í™•ì¸">
+	<input type="submit" name="·Î±×ÀÎÁ¤º¸È®ÀÎ">
 </form>
 </body>
 </html>

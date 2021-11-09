@@ -15,7 +15,6 @@ function IdCheck(){
 }
 
 function checkform() {
-	alert("완료!");
 	var form = document.regForm;
 	if(form.input_id.value=="") {
 		alert("아이디를 입력해주세요");
@@ -30,6 +29,7 @@ function checkform() {
 		return false;
 	}
 	form.submit();
+	alert("완료!");
 }
 </script>
 </head>

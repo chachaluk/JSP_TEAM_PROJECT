@@ -1,43 +1,43 @@
-<%@ page language="java"
-    pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="DAO.memberDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
 <div style="text-align: center"></div> 
-<h3>* ì•„ì´ë”” ì¤‘ë³µ í™•ì¸ ê²°ê³¼ *</h3> 
+<h3>* ¾ÆÀÌµğ Áßº¹ È®ÀÎ °á°ú *</h3> 
 <% 
-//1) ì‚¬ìš©ê°€ëŠ¥í•œ ì•„ì´ë””ì¼ ê²½ìš°, ì•„ì´ë”” ì…ë ¥ í¼ì— ë„£ê¸° ìœ„í•¨ 
+//1) »ç¿ë°¡´ÉÇÑ ¾ÆÀÌµğÀÏ °æ¿ì, ¾ÆÀÌµğ ÀÔ·Â Æû¿¡ ³Ö±â À§ÇÔ 
 String input_id=request.getParameter("input_id"); 
 memberDAO dao=new memberDAO();
 boolean id_check=dao.checkDuplicateID(input_id); 
 int cnt=0;
-out.println("ì…ë ¥ ID : <strong>" + input_id + "</strong>"); 
+out.println("ÀÔ·Â ID : <strong>" + input_id + "</strong>"); 
 if(id_check==true){ 
-	out.println("<p>ì‚¬ìš© ê°€ëŠ¥í•œ ì•„ì´ë””ì…ë‹ˆë‹¤.</p>"); 
-	out.println("<a href=\"javascript:apply(\'"+input_id+"\')\">[ì ìš©]</a>");
+	out.println("<p>»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğÀÔ´Ï´Ù.</p>"); 
+	out.println("<a href='javascript:apply(\"" + input_id + "\")'>[Àû¿ë]</a>");
 %>
 <script> 
 function apply(input_id){ 
-	//2) ì¤‘ë³µí™•ì¸ idë¥¼ ë¶€ëª¨ì°½ì— ì ìš© 
-	//ë¶€ëª¨ì°½ opener 
+	//2) Áßº¹È®ÀÎ id¸¦ ºÎ¸ğÃ¢¿¡ Àû¿ë 
+	//ºÎ¸ğÃ¢ opener 
 	alert("apply");
 	opener.document.regForm.input_id.value=input_id;
 	opener.document.regForm.input_id.readOnly=true;
 	opener.document.regForm.input_id.style.backgroundColor='gray';
-	window.close(); //ì°½ë‹«ê¸° 
+	window.close(); //Ã¢´İ±â 
 	}//apply () end 
 </script> 
 	<% }else{ 
-		out.println("<p style='color: red'>í•´ë‹¹ ì•„ì´ë””ëŠ” ì‚¬ìš©í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</p>"); }//if end %> <hr> 
-		<a href="javascript:history.back()">[ë‹¤ì‹œì‹œë„]</a> 
+		out.println("<p style='color: red'>ÇØ´ç ¾ÆÀÌµğ´Â »ç¿ëÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.</p>"); }//if end %> <hr> 
+		<a href="javascript:history.back()">[´Ù½Ã½Ãµµ]</a> 
 		&nbsp; &nbsp; 
-		<a href="javascript:window.close()">[ì°½ë‹«ê¸°]</a>
+		<a href="javascript:window.close()">[Ã¢´İ±â]</a>
 
 </body>
 </html>

@@ -1,29 +1,29 @@
-<%@ page language="java"
-    pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
 <div id="wrap">
 		<header id="header">
 		<ul>
-		<li><a href="/">í™ˆ</a></li>
+		<li><a href="/">È¨</a></li>
 		<%
 		Object input_id = session.getAttribute("input_id");
 		%>
 		<%
 		if(input_id==null){
 		%>
-		<li><a href="./Login.jsp">ë¡œê·¸ì¸</a></li>
-		<li><a href="./sign.jsp">íšŒì›ê°€ìž…</a></li>
+		<li><a href="./Login.jsp">·Î±×ÀÎ</a></li>
+		<li><a href="./sign.jsp">È¸¿ø°¡ÀÔ</a></li>
 		<%
 		} else {
 		%>
-		<li><a href="./LogoutAction.jsp">ë¡œê·¸ì•„ì›ƒ</a></li>
-		<li><a href="./update.jsp">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+		<li><a href="./LogoutAction.jsp">·Î±×¾Æ¿ô</a></li>
+		<li><a href="./update.jsp">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
 		<%
 		}
 		%>
