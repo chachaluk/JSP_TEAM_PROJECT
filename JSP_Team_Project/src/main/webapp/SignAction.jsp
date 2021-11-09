@@ -31,12 +31,24 @@ if(id_check==false){
 	}
 	else if(result==1) {
 		DAO.memberInsert(input_name, input_id, input_pw, input_address);
+<<<<<<< HEAD
+<<<<<<< HEAD:JSP_Team_Project/src/main/webapp/SignAction.jsp
+=======
+<<<<<<< HEAD:bin/JSP_Team_Project/src/main/webapp/SignAction.jsp
+>>>>>>> parent of 93c5fc6 (회원가입 추가 및 한글패치)
 <<<<<<< HEAD:src/main/webapp/SignAction.jsp
 		System.out.println("회원가입 완료!");
 		response.sendRedirect("./index.jsp");
 =======
 		System.out.println("ȸ������ �Ϸ�!");
 >>>>>>> parent of 93c5fc6 (회원가입 추가 및 한글패치):JSP_Team_Project/src/main/webapp/SignAction.jsp
+=======
+		System.out.println("ȸ������ �Ϸ�!");
+<<<<<<< HEAD
+>>>>>>> parent of 93c5fc6 (회원가입 추가 및 한글패치):src/main/webapp/SignAction.jsp
+=======
+>>>>>>> parent of 93c5fc6 (회원가입 추가 및 한글패치):JSP_Team_Project/src/main/webapp/SignAction.jsp
+>>>>>>> parent of 93c5fc6 (회원가입 추가 및 한글패치)
 	}
 }
 
