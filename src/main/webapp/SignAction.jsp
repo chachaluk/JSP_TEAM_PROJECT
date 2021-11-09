@@ -13,7 +13,8 @@
 String input_name=request.getParameter("input_name");
 String input_id=request.getParameter("input_id");
 String input_pw=request.getParameter("input_pw");
-String input_address=request.getParameter("input_address");
+String input_address=request.getParameter("zonecode ") + request.getParameter("address") + request.getParameter("detail");
+
 String password_confirm=request.getParameter("password_confirm");
 
 PreparedStatement pstmt = null;
