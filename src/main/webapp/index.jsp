@@ -17,7 +17,7 @@
 		<%
 		if(input_id==null){
 		%>
-		<li><a href="./Login.jsp">로그인</a></li>
+		<li><a href="./newlogin.jsp">로그인</a></li>
 		<li><a href="./sign.jsp">회원가입</a></li>
 		<%
 		} else {
