@@ -49,7 +49,7 @@ public class memberDAO {
 
 	}
 
-	public void memberInsert(String input_name, String input_id, String input_pw, String input_address) {// ȸ������
+	public void memberInsert(String input_name, String input_id, String input_pw, String input_address) {//회원가입
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String SQL = "INSERT into jsp_member(member_name, member_id, member_pw, member_address) values(?,?,?,?)";
@@ -96,7 +96,7 @@ public class memberDAO {
 		String dbpw="";
 		
 		try {
-		String SQL="SELECT mamber_pw from jsp_member where member_id=?";
+		String SQL="SELECT member_pw from jsp_member where member_id=?";
 			pstmt=con.prepareStatement(SQL);
 			pstmt.setString(1,  input_id);
 			rs=pstmt.executeQuery();
@@ -114,6 +114,24 @@ public class memberDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}return result;
+	}
+	
+	public void memberUpdate(String input_name, String input_id, String input_pw, String input_address) {// 전체수정
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "UPDATE FROM jsp_member SET member_name=?, member_pw=?, member_address=?, where member_id=?";
+
+		try {
+			pstmt = con.prepareStatement(SQL);
+			pstmt.setString(1, input_name);
+			pstmt.setString(2, input_pw);
+			pstmt.setString(3, input_address);
+			pstmt.setString(4, input_id);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	public void memberUpdateId(String input_id) {// 아이디수정
@@ -173,7 +191,7 @@ public class memberDAO {
 		}
 	}
 	
-	public void memgerInfo(String input_id) {//상세정보
+	public void memberInfo(String input_id) {//상세정보
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQL="SELECT*FROM jsp_member where member_id=?";

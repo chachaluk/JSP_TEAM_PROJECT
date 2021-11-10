@@ -24,6 +24,7 @@
 		%>
 		<li><a href="./LogoutAction.jsp">로그아웃</a></li>
 		<li><a href="./update.jsp">개인정보수정</a></li>
+		<li><a href="./delete.jsp">회원탈퇴</a></li>
 		<%
 		}
 		%>
