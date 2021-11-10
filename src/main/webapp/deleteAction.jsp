@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ page import ="DAO.memberDAO" %>
+<!-- 회원탈퇴 -->
 
 <%  //로그인이 되었이어야  보여지도록 검증
 	if(session.getAttribute("input_id")==null){
@@ -22,7 +23,7 @@ session.invalidate();
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>회원탈퇴</title>
 </head>
 <body>
 

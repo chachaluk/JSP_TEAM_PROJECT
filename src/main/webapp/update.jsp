@@ -1,16 +1,20 @@
 <%@ page language="java"
     pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page import ="DAO.memberDAO" %>
+<%@ page import ="DTO.memberDTO" %>
+<%memberDTO DTO = (memberDTO) request.getAttribute("DTO");%>
+
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>수정</title>
+
 </head>
+
 <body>
-<form action="./update_Action.jsp" method="post">
-	<input type="text" name="input_id">
-	<input type="password" name="input_pw">
-	<input type="submit" name="로그인정보확인">
-</form>
+
 </body>
 </html>
+

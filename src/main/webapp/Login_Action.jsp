@@ -1,11 +1,12 @@
 <%@ page language="java"
     pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ page import="DAO.memberDAO" %>
+<!-- 로그인 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 </head>
 <body>
 <%

@@ -2,11 +2,12 @@
     pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ page import="DAO.memberDAO" %>
 <%@page import="java.sql.PreparedStatement"%>
+<!-- 회원가입 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입</title>
 </head>
 <body>
 <%
@@ -14,7 +15,6 @@ String input_name=request.getParameter("input_name");
 String input_id=request.getParameter("input_id");
 String input_pw=request.getParameter("input_pw");
 String input_address=request.getParameter("zonecode ") + request.getParameter("address") + request.getParameter("detail");
-
 String password_confirm=request.getParameter("password_confirm");
 
 PreparedStatement pstmt = null;

@@ -1,11 +1,11 @@
 <%@ page language="java"
     pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-
+<!-- 회원가입 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입</title>
 <link href="./css/sign.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-Latest.min.js"><</script>
 <script src="http://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"><</script>
@@ -40,7 +40,6 @@ function IdCheck(){
 }
 
 function checkform() {
-	alert("완료!");
 	var form = document.regForm;
 	if(form.input_id.value=="") {
 		alert("아이디를 입력해주세요");
@@ -55,6 +54,7 @@ function checkform() {
 		return false;
 	}
 	form.submit();
+	alert("완료!");
 }
 </script>
 </head>

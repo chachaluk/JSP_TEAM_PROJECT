@@ -2,11 +2,12 @@
     pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="DAO.memberDAO" %>
+<!-- 아이디 중복확인 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>아이디 중복확인</title>
 </head>
 <body>
 <div style="text-align: center"></div> 

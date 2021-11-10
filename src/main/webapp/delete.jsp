@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
+<!-- 회원탈퇴 -->
+<!DOCTYPE html>
 <%
-
 if(session.getAttribute("input_id")==null){
 	response.sendRedirect("./index.jsp");
 }else{
 %>
-<!DOCTYPE html>
-
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>회원탈퇴</title>
 </head>
 <body>
 
@@ -20,7 +18,7 @@ if(session.getAttribute("input_id")==null){
 <form name="myform" action="deleteAction.jsp" method="post">
 
 <%
-    Object lobj_getdata = session.getAttribute("input_id");
+    Object lobj_getdata = session.getAttribute("input_id");//세션에 저장된 값 불러옴
 	String input_id = (String) session.getAttribute("input_id");
     out.println("아이디: " + input_id + "<br/><br/>");  
 %>
