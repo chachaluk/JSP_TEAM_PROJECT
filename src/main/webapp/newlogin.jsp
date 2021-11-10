@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <title>스타벅스 로그인</title>
 <link rel="stylesheet" href="newlogin.css">
+<style>
+.mySlide {display:none;}
+
+</style>
 <script src="https://kit.fontawesome.com/a177ebec54.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -44,7 +48,29 @@
 				</li>
 			</ul>
 			</div>
-		</form>	
+		</form>
+		<div class="w3-content w3-section" style="max-width:500px; max-height:300px">
+			<img class="mySlides" src="img1.jpg" style="height:300px; width:100%">
+			<img class="mySlides" src="img2.jpg" style="height:300px; width:100%">
+			<img class="mySlides" src="img3.jpg" style="height:300px; width:100%">
+		</div>
+
+		<script>
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+  			var i;
+  			var x = document.getElementsByClassName("mySlides");
+  			for (i = 0; i < x.length; i++) {
+   			x[i].style.display = "none";  
+  				}
+  			myIndex++;
+  			if (myIndex > x.length) {myIndex = 1}    
+  			x[myIndex-1].style.display = "block";  
+  			setTimeout(carousel, 2500); // Change image every 2 seconds
+			}
+		</script>
 		</div>
 	</div>
 </body>
