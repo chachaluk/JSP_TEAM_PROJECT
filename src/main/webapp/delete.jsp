@@ -25,7 +25,7 @@ if(session.getAttribute("input_id")==null){
 비밀번호 : <input type=password name="input_pw"  size="15" maxlength="12"><br/>
        
 <input type=submit value="회원탈퇴">
-<input type="button" value="취  소" onclick="location.href='index.jsp'">
+<input type="button" value="취  소" onclick="location.href='main_jsp.jsp'">
 </form>
 
 

@@ -10,7 +10,7 @@
 <body>
 	<%
 	session.removeAttribute("input_id");
-	response.sendRedirect("./index.jsp");
+	response.sendRedirect("./main_jsp.jsp");
 	%>
 </body>
 </html>

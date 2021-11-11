@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>스타벅스 로그인</title>
-<link rel="stylesheet" href="newlogin.css">
+<link rel="stylesheet" href="login.css">
 <style>
 .mySlide {display:none;}
 

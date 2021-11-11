@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>홈, 로그인, 회원가입 버튼</title>
+<title>Insert title here</title>
 
 </head>
 <body>
@@ -18,7 +18,7 @@
 			// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 			if(session.getAttribute("input_id")==null){ 
 		%>
-			<button style="background-color: #EFFBF2;" onclick="location='newlogin.jsp'">로그인</button>&nbsp;&nbsp;&nbsp;&nbsp;
+			<button style="background-color: #EFFBF2;" onclick="location='./login.jsp'">로그인</button>&nbsp;&nbsp;&nbsp;&nbsp;
 			<button style="background-color: #EFFBF2;" onclick="location='sign.jsp'">회원가입</button>
 		<%
 			//로그인 되었을 경우 - 로그아웃, 내정보 버튼을 보여준다.

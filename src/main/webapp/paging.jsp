@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<!-- 페이지 -->
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>페이지</title>
+<title>Insert title here</title>
 
 
 </head>
@@ -65,9 +64,10 @@ String listSql
             while(listResultSet.next()) {
 %>
 	<tr>
+	
     <td>
-   
-      <input type="checkbox" name="menu" value=<%= listResultSet.getString("name") %><%=listResultSet.getString("detail") %><%=listResultSet.getString("price")%>>
+   <input type="checkbox" name="menu" value="<%= listResultSet.getString("name") %>&nbsp;&nbsp;&nbsp;&nbsp;<%=listResultSet.getString("price")%>">
+      
       <%= listResultSet.getString("name") %>
    
               
@@ -79,6 +79,7 @@ String listSql
 	
 <%        
   }
+
 %>
 
         </tbody>

@@ -2,12 +2,11 @@
     pageEncoding="UTF-8"%>
     <%@ page import="java.util.ArrayList" %>
     <% request.setCharacterEncoding("UTF-8");%>
-<!-- 주문내역 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주문내역</title>
+<title>Insert title here</title>
 	<style>
 	#wrap{
 		width: 800px;
@@ -52,7 +51,7 @@
 		<% String[] menu = request.getParameterValues("menu"); 
    		if (menu != null) { 
       	for (int i = 0; i < menu.length; i++) 
-         { out.println(menu[i]); }
+         { out.print(menu[i]+"<br>"); }
       
          } %> 
 		

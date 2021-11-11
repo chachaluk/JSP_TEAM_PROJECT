@@ -134,64 +134,54 @@ public class memberDAO {
 
 	}
 
-	public void memberUpdateId(String input_id) {// 아이디수정
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String SQL = "UPDATE FROM jsp_member where member_id=?";
+	
 
-		try {
-			pstmt = con.prepareStatement(SQL);
-			pstmt.setString(1, input_id);
-			pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void memberUpdatePw(String input_pw) {//비밀번호수정
+	public void memberUpdatePw(String input_pw, String input_id) {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String SQL="UPDATE FROM jsp_member where member_pw=?";
+		String SQL="UPDATE jsp_member set member_pw = ? where member_id=?";
 		
 		try {
 			pstmt=con.prepareStatement(SQL);
 			pstmt.setString(1,  input_pw);
+			pstmt.setString(2,  input_id);
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void memberUpdateName(String input_name) {//이름수정
+	public void memberUpdateName(String input_name, String input_id) {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String SQL="UPDATE FROM jsp_member where member_name=?";
+		String SQL="UPDATE jsp_member set member_name = ? where member_id=?";
 			
 		try {
 			pstmt=con.prepareStatement(SQL);
 			pstmt.setString(1,  input_name);
+			pstmt.setString(2,  input_id);
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 				e.printStackTrace();
 		}
 	}
 	
-	public void memberUpdateAddress(String input_address) {//주소수정
+	public void memberUpdateAddress(String input_address, String input_id) {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String SQL="UPDATE FROM jsp_member where member_address=?";
+		String SQL="UPDATE jsp_member set member_address = ? where member_id=?";
 			
 		try {
 			pstmt=con.prepareStatement(SQL);
 			pstmt.setString(1,  input_address);
+			pstmt.setString(2,  input_id);
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 				e.printStackTrace();
 		}
 	}
 	
-	public void memberInfo(String input_id) {//상세정보
+	public ResultSet memberInfo(String input_id) {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQL="SELECT*FROM jsp_member where member_id=?";
@@ -203,7 +193,7 @@ public class memberDAO {
 		}catch(Exception e) {
 				e.printStackTrace();
 		}
-		
+		return rs;
 	}
 
 }
