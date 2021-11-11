@@ -1,15 +1,15 @@
 <%@ page language="java"
     pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<!-- 회원가입 -->
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>Insert title here</title>
 <link href="./css/sign.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-Latest.min.js"><</script>
 <script src="http://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"><</script>
-
+<link rel="stylesheet" href="css/bootstrap.css">
 <script>
 $(window).on("load",function(){
 	$("#find_button").click(function(){
@@ -40,6 +40,7 @@ function IdCheck(){
 }
 
 function checkform() {
+	alert("완료!");
 	var form = document.regForm;
 	if(form.input_id.value=="") {
 		alert("아이디를 입력해주세요");
@@ -54,11 +55,53 @@ function checkform() {
 		return false;
 	}
 	form.submit();
-	alert("완료!");
 }
 </script>
 </head>
 <body>
+	<div class="container">
+	<div class="col-log-4"></div><%-- 굵기 변경 --%>
+	<div class="col-log-4">
+		<div class="jumbotron" style="padding-top: 20px;"><%-- 위의 회색 빈공간 --%>
+		<form name="regForm" action="./SignAction.jsp" method="post"><%-- joinAction 페이지로 암호화한 정보를 보냄 --%>
+		
+		<h3 style="text-align: center;">회원가입 화면</h3>
+		
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="이름" id="input_name" name="input_name" maxlength="20">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="아이디" name="input_id" id="input_id" maxlength="20">
+			<br>
+			<input type="button" class="btn btn-primary form-control" value="아이디 중복체크" checked onclick="IdCheck()">
+		</div>
+		<div class="form-group">
+				<input type="password"class="form-control" placeholder="비밀번호 입력" id="input_pw" name="input_pw" maxlength="20">
+		</div> 
+		<div class="form-group">
+				<input type="password"class="form-control" placeholder="비밀번호 확인" name="password_confirm" maxlength="20">
+		</div> 
+		
+		<input type="button" class="btn btn-primary form-control" id="find_button" value="주소 검색"> <br>
+		<br>
+		<div class="form-group">
+				<input type="text"class="form-control" placeholder="우편번호" name="zonecode" id="zonecode" readonly>
+		</div> 
+		
+		<div class="form-group">
+				<input type="text"class="form-control" placeholder="도로명주소" name="address" id="address" readonly>
+		</div> 
+		
+		<div class="form-group">
+				<input type="text"class="form-control" placeholder="상세주소" name="detail" maxlength="20">
+		</div> 
+		
+			</div>
+			<input type="submit" class="btn btn-primary form-control" value="회원가입">
+			
+		
+	</div>
+	</div>
 	<form name="regForm" action="./SignAction.jsp" method="post" >
 		<label for="input_name">이름:</label>
 		<input type="text" name="input_name" id="input_name" placeholder="이름을 입력하세요"> <br>
@@ -71,10 +114,6 @@ function checkform() {
 		<input type="password" name="password_confirm" placeholder="비밀번호확인"> <br>
 		<label for="input_address">주소</label>
 		<input type="button" id="find_button" value="주소 검색"> <br>
-		
-		<input type="text" name="zonecode" id="zonecode" placeholder="우편번호" readonly> <br>
-		<input type="text" name="address" id="address" placeholder="도로명주소" readonly> <br>
-		<input type="text" name="detail" id="detail" placeholder="상세주소"> <br>
 		
 		
 		<input type="submit" value="회원가입" id="signBtn" onclick="checkform()">
