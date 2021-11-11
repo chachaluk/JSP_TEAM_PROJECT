@@ -52,9 +52,7 @@
    		if (menu != null) { 
       	for (int i = 0; i < menu.length; i++) 
          { out.print(menu[i]+"<br>"); }
-      
          } %> 
-		
 	</div>
 	<div id="footer">
 	<input type="button" value="HOME"

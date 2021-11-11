@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
+import webapp.search;
 import DTO.memberDTO;
 
 public class memberDAO {
@@ -194,6 +194,90 @@ public class memberDAO {
 				e.printStackTrace();
 		}
 		return rs;
+	}
+	public void coffeeSelect(String input_id) {// 커피 검색
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "SELECT * FROM jsp_cafe_menu where cafe_name=?";
+
+		try {
+			pstmt = con.prepareStatement(SQL);
+			pstmt.setString(1, input_id);
+			rs = pstmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	public ResultSet SelectCountCoffee() {
+		int totalRowCount = 0;
+		PreparedStatement totalStatement = null;
+		ResultSet totalResultSet = null;
+		try {
+			String totalSql = "SELECT COUNT(*) FROM jsp_cafe_menu";
+		    totalStatement = con.prepareStatement(totalSql);
+		    totalResultSet = totalStatement.executeQuery();
+		    if(totalResultSet.next()) {
+		        totalRowCount = totalResultSet.getInt(1);
+		    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalResultSet;
+	}
+	public ResultSet SelectList() {
+		PreparedStatement listStatement = null;
+		ResultSet listResultSet = null;
+		int pagePerRow = 10;
+		int currentPage = 1;
+		try {
+			String listSql 
+			= "SELECT name, detail, price FROM jsp_cafe_menu LIMIT ?, ?";
+
+			    listStatement = con.prepareStatement(listSql);
+			    listStatement.setInt(1, (currentPage-1)*pagePerRow); 
+			    listStatement.setInt(2, pagePerRow); 
+			    listResultSet = listStatement.executeQuery();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listResultSet;
+	}
+	public ResultSet SearchCountCoffee(String input_name) {
+		int totalRowCount = 0;
+		PreparedStatement totalStatement = null;
+		ResultSet totalResultSet = null;
+		try {
+			String totalSql = "SELECT COUNT(*) FROM jsp_cafe_menu where name like '%"+input_name+"%'";
+		    totalStatement = con.prepareStatement(totalSql);
+		    totalResultSet = totalStatement.executeQuery();
+		    if(totalResultSet.next()) {
+		        totalRowCount = totalResultSet.getInt(1);
+		    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalResultSet;
+	}
+	public ResultSet SearchList(String input_name) {
+		PreparedStatement listStatement = null;
+		ResultSet listResultSet = null;
+		int pagePerRow = 10;
+		int currentPage = 1;
+		try {
+			String listSql 
+			= "SELECT name, detail, price FROM jsp_cafe_menu where name like '%"+input_name+"%' LIMIT ?, ?";
+
+			    listStatement = con.prepareStatement(listSql);
+			    listStatement.setInt(1, (currentPage-1)*pagePerRow); 
+			    listStatement.setInt(2, pagePerRow); 
+			    listResultSet = listStatement.executeQuery();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listResultSet;
 	}
 
 }

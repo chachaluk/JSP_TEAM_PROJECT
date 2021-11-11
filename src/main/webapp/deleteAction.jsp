@@ -5,7 +5,7 @@
 
 <%  //로그인이 되었이어야  보여지도록 검증
 	if(session.getAttribute("input_id")==null){
-    	response.sendRedirect("index.jsp");
+    	response.sendRedirect("main_jsp.jsp");
 	}
 %> 
 <%
@@ -28,7 +28,7 @@ session.invalidate();
 <body>
 
 회원정보가 삭제되었습니다.<br/>
-<input type= "button" value="확인" onClick="location.href='index.jsp'">
+<input type= "button" value="확인" onClick="location.href='main_jsp.jsp'">
 
 </body>
 </html>

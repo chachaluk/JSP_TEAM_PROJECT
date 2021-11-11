@@ -11,13 +11,13 @@
 </head>
 <body>
 <%
+	String input_name = request.getParameter("input_name");
 	memberDAO dao=new memberDAO();
 	int totalRowCount = 0;
 	int pagePerRow = 10;
 	int currentPage = 1;
-	ResultSet totalResultSet = dao.SelectCountCoffee();
-	
-	ResultSet listResultSet = dao.SelectList();
+	ResultSet totalResultSet = dao.SearchCountCoffee(input_name);
+	ResultSet listResultSet = dao.SearchList(input_name);
 %>	
 
 <form name="order" method="post" action="oders.jsp">
@@ -61,7 +61,7 @@
     <form action="search.jsp" method="post">
     <label for="input_name"></label><br>
 		<input type="text" name="input_name" id="input_name" placeholder="커피이름을 입력하세요">
-		<input type="submit" value="검색" id="searchBtn"></form>
+		<input type="button" value="검색" id="searchBtn"></form>
     
     	<%
     	int lastPage = totalRowCount/pagePerRow;

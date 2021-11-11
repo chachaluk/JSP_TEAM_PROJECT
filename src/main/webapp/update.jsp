@@ -80,7 +80,7 @@ while(rs.next()){
 		<label for="input_name">이름:</label>
 		<input type="text" name="input_name" id="input_name" value="<%=input_name %>" placeholder="이름을 입력하세요"> <br>
 		<label for="input_id">아이디:</label>
-		<input type="text" name="input_id" id="input_id" readOnly=true value="<%=input_id %>" > <br>
+		<input type="text" name="input_id" id="input_id" readOnly=true style="background-color: gray;" value="<%=input_id %>" > <br>
 		<input type="button" onclick="IdCheck()" value="아이디 중복체크"> <br>
 		<label for="input_pw">비밀번호:</label>
 		<input type="password" name="input_pw" value="<%=input_pw%>" placeholder="비밀번호를 입력하세요"> <br>
