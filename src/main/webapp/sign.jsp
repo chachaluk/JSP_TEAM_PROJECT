@@ -102,21 +102,7 @@ function checkform() {
 		
 	</div>
 	</div>
-	<form name="regForm" action="./SignAction.jsp" method="post" >
-		<label for="input_name">이름:</label>
-		<input type="text" name="input_name" id="input_name" placeholder="이름을 입력하세요"> <br>
-		<label for="input_id">아이디:</label>
-		<input type="text" name="input_id" id="input_id" placeholder="아이디를 입력하세요"> <br>
-		<input type="button" onclick="IdCheck()" value="아이디 중복체크"> <br>
-		<label for="input_pw">비밀번호:</label>
-		<input type="password" name="input_pw" placeholder="비밀번호를 입력하세요"> <br>
-		<label for="password_confirm">비밀번호 확인:</label>
-		<input type="password" name="password_confirm" placeholder="비밀번호확인"> <br>
-		<label for="input_address">주소</label>
-		<input type="button" id="find_button" value="주소 검색"> <br>
-		
-		
-		<input type="submit" value="회원가입" id="signBtn" onclick="checkform()">
-	</form>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>	
 </body>
 </html>
