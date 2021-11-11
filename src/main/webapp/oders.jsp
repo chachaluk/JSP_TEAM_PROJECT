@@ -56,7 +56,7 @@
 	</div>
 	<div id="footer">
 	<input type="button" value="HOME"
-                 onclick="location='main_jsp.jsp'" >
+                 onclick="location='Home.jsp'" >
 	</div>
 </div>
 

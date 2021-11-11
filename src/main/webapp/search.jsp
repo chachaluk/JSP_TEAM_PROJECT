@@ -11,12 +11,14 @@
 </head>
 <body>
 <%	
+	out.print("서치");
 	String input_name = request.getParameter("input_name");
 	memberDAO dao=new memberDAO();
 	int totalRowCount = 0;
 	int pagePerRow = 10;
 	int currentPage = 1;
 	ResultSet totalResultSet = dao.SearchCountCoffee(input_name);
+	totalRowCount = dao.TotalCountCoffee(input_name);
 	ResultSet listResultSet = dao.SearchList(input_name);
 %>	
 

@@ -30,8 +30,8 @@ if(id_check==false){
 	}
 	else {
 		DAO.memberInsert(input_name, input_id, input_pw, input_address);
-		System.out.println("회원가입 완료!");
-		response.sendRedirect("./index.jsp");
+		System.out.println("회원가입 완료!"); 
+		response.sendRedirect("./Home.jsp");
 	}
 }
 %>

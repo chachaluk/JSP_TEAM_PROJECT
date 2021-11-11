@@ -210,6 +210,18 @@ public class memberDAO {
 
 	}
 	public ResultSet SelectCountCoffee() {
+		PreparedStatement totalStatement = null;
+		ResultSet totalResultSet = null;
+		try {
+			String totalSql = "SELECT COUNT(*) FROM jsp_cafe_menu";
+		    totalStatement = con.prepareStatement(totalSql);
+		    totalResultSet = totalStatement.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalResultSet;
+	}
+	public int TotalCountCoffee() {
 		int totalRowCount = 0;
 		PreparedStatement totalStatement = null;
 		ResultSet totalResultSet = null;
@@ -223,13 +235,14 @@ public class memberDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return totalResultSet;
+		return totalRowCount;
 	}
-	public ResultSet SelectList() {
+	
+	public ResultSet SelectList(int input_page) {
 		PreparedStatement listStatement = null;
 		ResultSet listResultSet = null;
 		int pagePerRow = 10;
-		int currentPage = 1;
+		int currentPage = input_page;
 		try {
 			String listSql 
 			= "SELECT name, detail, price FROM jsp_cafe_menu LIMIT ?, ?";
@@ -259,6 +272,22 @@ public class memberDAO {
 			e.printStackTrace();
 		}
 		return totalResultSet;
+	}
+	public int TotalCountCoffee(String input_name) {
+		int totalRowCount = 0;
+		PreparedStatement totalStatement = null;
+		ResultSet totalResultSet = null;
+		try {
+			String totalSql = "SELECT COUNT(*) FROM jsp_cafe_menu where name like '%"+input_name+"%'";
+		    totalStatement = con.prepareStatement(totalSql);
+		    totalResultSet = totalStatement.executeQuery();
+		    if(totalResultSet.next()) {
+		        totalRowCount = totalResultSet.getInt(1);
+		    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalRowCount;
 	}
 	public ResultSet SearchList(String input_name) {
 		PreparedStatement listStatement = null;

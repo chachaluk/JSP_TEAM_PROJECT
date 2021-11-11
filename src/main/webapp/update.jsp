@@ -76,7 +76,7 @@ while(rs.next()){
 }
 
 %>
-	<form name="regForm" action="./update_Action.jsp" method="post" >
+	<form name="regForm" action="./updateAction.jsp" method="post" >
 		<label for="input_name">이름:</label>
 		<input type="text" name="input_name" id="input_name" value="<%=input_name %>" placeholder="이름을 입력하세요"> <br>
 		<label for="input_id">아이디:</label>

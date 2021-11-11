@@ -28,7 +28,7 @@ session.invalidate();
 <body>
 
 회원정보가 삭제되었습니다.<br/>
-<input type= "button" value="확인" onClick="location.href='main_jsp.jsp'">
+<input type= "button" value="확인" onClick="location.href='Home.jsp'">
 
 </body>
 </html>

@@ -23,14 +23,14 @@ boolean password_check=false;
 memberDAO DAO=new memberDAO();
 if(input_pw.equals(password_confirm)==false){
 	System.out.println("비밀번호가 일치하지 않습니다.");
-	response.sendRedirect("./index.jsp");
+	response.sendRedirect("./Home.jsp");
 }
 else {
 	DAO.memberUpdatePw(input_pw,input_id);
 	DAO.memberUpdateName(input_name,input_id);
 	DAO.memberUpdateAddress(input_address,input_id);
 	System.out.println("회원정보 수정 완료!");
-	response.sendRedirect("./index.jsp");
+	response.sendRedirect("./Home.jsp");
 }
 %>
 </body>

@@ -11,15 +11,20 @@
 </head>
 <body>
 <%
+	
 	String searching=null;
 	session.setAttribute("searching", searching);
 	memberDAO dao=new memberDAO();
 	int totalRowCount = 0;
 	int pagePerRow = 10;
 	int currentPage = 1;
+	if(request.getParameter("currentPage") !=null){
+		currentPage = Integer.parseInt(request.getParameter("currentPage"));
+		}
 	ResultSet totalResultSet = dao.SelectCountCoffee();
+	totalRowCount = dao.TotalCountCoffee();
+	ResultSet listResultSet = dao.SelectList(currentPage);
 	
-	ResultSet listResultSet = dao.SelectList();
 %>	
 
 <form name="order" method="post" action="oders.jsp">
@@ -63,8 +68,7 @@
     <form action="main_jsp.jsp" method="post">
     <label for="input_name"></label><br>
 		<input type="text" name="input_name" id="input_name" placeholder="커피이름을 입력하세요">
-		<input type="submit" value="검색 <% searching="true";
-	session.setAttribute("searching", searching); %>" id="searchBtn"></form>
+		<input type="submit" value="검색 " onclick="location='Search.jsp'" id="searchBtn"></form>
     
     	<%
     	int lastPage = totalRowCount/pagePerRow;
