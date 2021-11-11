@@ -63,7 +63,21 @@
 		<h1>메뉴</h1>
 		</div>
 		<div id="footer">
-		<jsp:include page="paging.jsp"/>
+		
+		<%
+		
+			if(session.getAttribute("searching")==null) {
+			%>
+			<jsp:include page="paging.jsp"/>
+		<% }else { %>
+			<jsp:include page="search.jsp"/>
+		<%
+		}
+		%>
+		
+		
+		
+		
 		
 		</div>
 	</div>

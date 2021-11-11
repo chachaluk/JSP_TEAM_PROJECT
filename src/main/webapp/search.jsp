@@ -10,8 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="main_jsp.jsp"/>
-<%
+<%	
 	String input_name = request.getParameter("input_name");
 	memberDAO dao=new memberDAO();
 	int totalRowCount = 0;
@@ -56,6 +55,14 @@
         </tbody>
         
     </table>
+    
+    <input type="submit" name= "order" value="주문하기" style="background-color: #EFFBF2;" ></input>
+    </form>
+    <form action="main_jsp.jsp" method="post">
+    <label for="input_name"></label><br>
+		<input type="text" name="input_name" id="input_name" placeholder="커피이름을 입력하세요">
+		<input type="button" value="검색" id="searchBtn"></form>
+    
     	<%
     	int lastPage = totalRowCount/pagePerRow;
         if(totalRowCount%pagePerRow != 0) {

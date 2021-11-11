@@ -11,6 +11,8 @@
 </head>
 <body>
 <%
+	String searching=null;
+	session.setAttribute("searching", searching);
 	memberDAO dao=new memberDAO();
 	int totalRowCount = 0;
 	int pagePerRow = 10;
@@ -58,10 +60,11 @@
     
     <input type="submit" name= "order" value="주문하기" style="background-color: #EFFBF2;" ></input>
     </form>
-    <form action="search.jsp" method="post">
+    <form action="main_jsp.jsp" method="post">
     <label for="input_name"></label><br>
 		<input type="text" name="input_name" id="input_name" placeholder="커피이름을 입력하세요">
-		<input type="submit" value="검색" id="searchBtn"></form>
+		<input type="submit" value="검색 <% searching="true";
+	session.setAttribute("searching", searching); %>" id="searchBtn"></form>
     
     	<%
     	int lastPage = totalRowCount/pagePerRow;
