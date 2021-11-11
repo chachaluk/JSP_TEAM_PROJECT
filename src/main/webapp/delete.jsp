@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <%
 if(session.getAttribute("input_id")==null){
-	response.sendRedirect("./index.jsp");
+	response.sendRedirect("./Home.jsp");
 }else{
 %>
 <html>

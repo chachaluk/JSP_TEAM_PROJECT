@@ -3,20 +3,17 @@
 <%@ page import ="DAO.memberDAO" %>
 <!-- 회원탈퇴 -->
 
-<%  //로그인이 되었이어야  보여지도록 검증
-	if(session.getAttribute("input_id")==null){
-    	response.sendRedirect("main_jsp.jsp");
-	}
-%> 
 <%
-String input_id =request.getParameter("input_id");
+String input_id =(String)session.getAttribute("input_id");
 String input_pw = request.getParameter("input_pw");
 
 
 
 memberDAO DAO=new memberDAO();
-DAO.memberDelete(input_id, input_pw);
-session.invalidate();       
+boolean result = DAO.memberDelete(input_id, input_pw);
+if(result){
+session.invalidate();
+}
 %> 
 
 <!DOCTYPE html>

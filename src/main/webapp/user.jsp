@@ -27,7 +27,7 @@
 		
 			<button style="background-color: #EFFBF2;" onclick="location='LogoutAction.jsp'">로그아웃</button>&nbsp;&nbsp;&nbsp;&nbsp;
 			<button style="background-color: #EFFBF2;" onclick="location='update.jsp'">회원정보수정</button>&nbsp;&nbsp;&nbsp;&nbsp;
-			
+			<button style="background-color: #EFFBF2;" onclick="location='delete.jsp'">회원탈퇴</button>&nbsp;&nbsp;&nbsp;&nbsp;
 			<button style="background-color: #EFFBF2;" onclick="location='oders.jsp'">주문내역</button>
 		<%	}	%>	
 

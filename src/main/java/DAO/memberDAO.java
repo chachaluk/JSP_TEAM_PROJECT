@@ -98,7 +98,7 @@ public class memberDAO {
 		try {
 		String SQL="SELECT member_pw from jsp_member where member_id=?";
 			pstmt=con.prepareStatement(SQL);
-			pstmt.setString(1,  input_id);
+			pstmt.setString(1, input_id);
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -106,14 +106,15 @@ public class memberDAO {
 				if(dbpw.equals(input_pw)) {
 					String DELSQL="DELETE FROM jsp_member where member_id=?";
 					pstmt=con.prepareStatement(DELSQL);
-					pstmt.setString(1,  input_id);
+					pstmt.setString(1, input_id);
 					pstmt.executeUpdate();
 					result=true;
 				}
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
-		}return result;
+		}
+		return result;
 	}
 	
 	public void memberUpdate(String input_name, String input_id, String input_pw, String input_address) {// 전체수정
