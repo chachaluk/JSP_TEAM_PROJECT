@@ -77,7 +77,7 @@
 <%
         if(currentPage>0) {
 %>
-            <a href="<%=request.getContextPath()%>/main_jsp.jsp?currentPage=<%=currentPage-1%>">이전</a>
+            <a href="<%=request.getContextPath()%>/Home.jsp?currentPage=<%=currentPage-1%>">이전</a>
 <%
         }
         if(currentPage < lastPage) {
