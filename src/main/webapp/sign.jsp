@@ -95,9 +95,12 @@ function checkform() {
 		<div class="form-group">
 				<input type="text"class="form-control" placeholder="상세주소" name="detail" maxlength="20">
 		</div> 
+		<div>
+					<input type="submit" class="btn btn-success form-control" value="회원가입">
+					</div>
 		</form>
 			</div>
-			<input type="submit" class="btn btn-success form-control" value="회원가입">
+
 			
 		
 	</div>
