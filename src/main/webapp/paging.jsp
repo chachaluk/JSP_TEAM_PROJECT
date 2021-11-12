@@ -65,10 +65,10 @@
     
     <input type="submit" name= "order" value="주문하기" style="background-color: #EFFBF2;" ></input>
     </form>
-    <form action="main_jsp.jsp" method="post">
+    <form action="SearchAction.jsp" method="post">
     <label for="input_name"></label><br>
 		<input type="text" name="input_name" id="input_name" placeholder="커피이름을 입력하세요">
-		<input type="submit" value="검색 " onclick="location='Search.jsp'" id="searchBtn"></form>
+		<input type="submit" value="검색 " onclick="location='Search.jsp'" id="searchBtn">
     
     	<%
     	int lastPage = totalRowCount/pagePerRow;
@@ -93,5 +93,6 @@
         }
 %>
     </div>
+    </form>
 </body>
 </html>

@@ -11,7 +11,7 @@
 </head>
 <body>
 <%	
-	out.print("서치");
+	out.print("입력하신 검색결과입니다.");
 	String input_name = request.getParameter("input_name");
 	memberDAO dao=new memberDAO();
 	int totalRowCount = 0;
@@ -60,10 +60,10 @@
     
     <input type="submit" name= "order" value="주문하기" style="background-color: #EFFBF2;" ></input>
     </form>
-    <form action="main_jsp.jsp" method="post">
+    <form action="SearchAction.jsp" method="post">
     <label for="input_name"></label><br>
 		<input type="text" name="input_name" id="input_name" placeholder="커피이름을 입력하세요">
-		<input type="button" value="검색" id="searchBtn"></form>
+		<input type="button" value="검색" id="searchBtn">
     
     	<%
     	int lastPage = totalRowCount/pagePerRow;
@@ -75,7 +75,7 @@
 
     <div>
 <%
-        if(currentPage>1) {
+        if(currentPage>0) {
 %>
             <a href="<%=request.getContextPath()%>/main_jsp.jsp?currentPage=<%=currentPage-1%>">이전</a>
 <%
@@ -88,5 +88,6 @@
         }
 %>
     </div>
+    </form>
 </body>
 </html>

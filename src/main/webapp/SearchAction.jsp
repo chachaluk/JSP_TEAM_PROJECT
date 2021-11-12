@@ -10,5 +10,6 @@
 <body>
 	<% String searching="true";
 	session.setAttribute("searching", searching); %>
+	<jsp:include page="main_jsp.jsp"/>
 </body>
 </html>
