@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="login.css">
 <style>
 .mySlide {display:none;}
-
 </style>
 <script src="https://kit.fontawesome.com/a177ebec54.js" crossorigin="anonymous"></script>
 </head>

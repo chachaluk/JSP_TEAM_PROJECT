@@ -40,7 +40,6 @@ function IdCheck(){
 }
 
 function checkform() {
-	alert("완료!");
 	var form = document.regForm;
 	if(form.input_id.value=="") {
 		alert("아이디를 입력해주세요");
@@ -55,6 +54,7 @@ function checkform() {
 		return false;
 	}
 	form.submit();
+	alert("완료!");
 }
 </script>
 </head>
@@ -73,7 +73,7 @@ function checkform() {
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="아이디" name="input_id" id="input_id" maxlength="20">
 			<br>
-			<input type="button" class="btn btn-primary form-control" value="아이디 중복체크" checked onclick="IdCheck()">
+			<input type="button" class="btn btn-success form-control" value="아이디 중복체크" checked onclick="IdCheck()">
 		</div>
 		<div class="form-group">
 				<input type="password"class="form-control" placeholder="비밀번호 입력" id="input_pw" name="input_pw" maxlength="20">
@@ -82,7 +82,7 @@ function checkform() {
 				<input type="password"class="form-control" placeholder="비밀번호 확인" name="password_confirm" maxlength="20">
 		</div> 
 		
-		<input type="button" class="btn btn-primary form-control" id="find_button" value="주소 검색"> <br>
+		<input type="button" class="btn btn-success form-control" id="find_button" value="주소 검색"> <br>
 		<br>
 		<div class="form-group">
 				<input type="text"class="form-control" placeholder="우편번호" name="zonecode" id="zonecode" readonly>
@@ -95,14 +95,13 @@ function checkform() {
 		<div class="form-group">
 				<input type="text"class="form-control" placeholder="상세주소" name="detail" maxlength="20">
 		</div> 
-		
+		</form>
 			</div>
 			<input type="submit" class="btn btn-primary form-control" value="회원가입">
 			
 		
 	</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>	
+	
 </body>
 </html>
