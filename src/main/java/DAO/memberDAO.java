@@ -278,4 +278,19 @@ public class memberDAO {
 		return listResultSet;
 	}
 
+	public ResultSet memberInfo(String input_id) {//상세정보
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String SQL="SELECT*FROM jsp_member where member_id=?";
+			
+		try {
+			pstmt=con.prepareStatement(SQL);
+			pstmt.setString(1,  input_id);
+			rs=pstmt.executeQuery();
+		}catch(Exception e) {
+				e.printStackTrace();
+		}
+		return rs;
+	}
+
 }
