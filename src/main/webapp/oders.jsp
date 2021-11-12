@@ -9,31 +9,35 @@
 <title>Insert title here</title>
 	<style>
 	#wrap{
-		width: 800px;
+		width: 450px;
 		margin: 0 auto 0 auto;
 	}
 	
 	#header{
 		text-align: center;
-		width: 800px;
-		height: 100px;
-		background-color: #F3E2A9;
-		padding: 60px 0px;
+		width: 280px;
+		height: 80px;
+		background-color: rgba(10, 73, 10, 0.514);
+		padding: 10px 10px 10px 10px;
+		
+
+
 	}
 	#user{
 		float: left;
-		width: 800px;
-		height: 400px;
-		background-color:;
+		width: 300px;
+		height: 300px;
+		background-color: rgba(10, 73, 10, 0.514);
 		text-align: center;
 		vertical-align: middle;
 	}
 		#footer{
 		clear: left;
-		width: 800px;
+		width: 200px;
 		height: 100px;
 		background-color: ;
 		text-align: center;
+		padding: 50px 50px;
 		vertical-align: middle;
 	}
 	</style>
@@ -44,7 +48,9 @@
 <div id="wrap">
 	<div id="header">
 	<h1>주문내역</h1>
+	<hr>
 	</div>
+	
 	<div id="user">
     
    
@@ -59,6 +65,5 @@
                  onclick="location='Home.jsp'" >
 	</div>
 </div>
-
 </body>
 </html>

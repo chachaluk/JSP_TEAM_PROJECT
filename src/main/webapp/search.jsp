@@ -25,7 +25,7 @@
 <form name="order" method="post" action="oders.jsp">
     <table style="margin-left: auto; margin-right: auto; ">
         <thead>
-            <tr style="background-color: #F8E0F7">
+            <tr style="background-color: rgba(10, 73, 10, 0.514);">
                 <th>품  명</th>
                 <th>설명</th>
                 <th>가격</th>

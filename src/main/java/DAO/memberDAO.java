@@ -116,27 +116,9 @@ public class memberDAO {
 		}return result;
 	}
 	
-	public void memberUpdate(String input_name, String input_id, String input_pw, String input_address) {// 전체수정
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String SQL = "UPDATE FROM jsp_member SET member_name=?, member_pw=?, member_address=?, where member_id=?";
-
-		try {
-			pstmt = con.prepareStatement(SQL);
-			pstmt.setString(1, input_name);
-			pstmt.setString(2, input_pw);
-			pstmt.setString(3, input_address);
-			pstmt.setString(4, input_id);
-			pstmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
 	
 
-	public void memberUpdatePw(String input_pw, String input_id) {
+	public void memberUpdatePw(String input_pw, String input_id) {//비밀번호 수정
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQL="UPDATE jsp_member set member_pw = ? where member_id=?";
@@ -151,7 +133,7 @@ public class memberDAO {
 		}
 	}
 
-	public void memberUpdateName(String input_name, String input_id) {
+	public void memberUpdateName(String input_name, String input_id) {//이름 수정
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQL="UPDATE jsp_member set member_name = ? where member_id=?";
@@ -166,7 +148,7 @@ public class memberDAO {
 		}
 	}
 	
-	public void memberUpdateAddress(String input_address, String input_id) {
+	public void memberUpdateAddress(String input_address, String input_id) {//주소 수정
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String SQL="UPDATE jsp_member set member_address = ? where member_id=?";
@@ -181,20 +163,7 @@ public class memberDAO {
 		}
 	}
 	
-	public ResultSet memberInfo(String input_id) {
-		PreparedStatement pstmt=null;
-		ResultSet rs=null;
-		String SQL="SELECT*FROM jsp_member where member_id=?";
-			
-		try {
-			pstmt=con.prepareStatement(SQL);
-			pstmt.setString(1,  input_id);
-			rs=pstmt.executeQuery();
-		}catch(Exception e) {
-				e.printStackTrace();
-		}
-		return rs;
-	}
+
 	public void coffeeSelect(String input_id) {// 커피 검색
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
